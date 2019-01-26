@@ -1,12 +1,12 @@
 <html>
 <head>
-<title>NVDA Controller Client API 1.0 Documentation</title>
+<title>NVDA Controller Client API 1.0 Fibonacci Documentation</title>
 </head>
 <body>
-<h1>NVDA Controller Client API 1.0 Documentation</h1>
+<h1>NVDA Controller Client API 1.0 Fibonacci Documentation</h1>
 <h2>Introduction</h2>
 <p>
-This client API allows an application to  communicate to NVDA, in order to do such things as speak text or braille a message.
+This client API allows an application to communicate to NVDA, in order to do such things as speak text or braille a message. Specifically in this repository, the Fibonacci program allows NVDA to speak and braille messages about numbers in the Fibonacci sequence.
 </p>
 <p>
 The client API is implemented as a dll (dynamic link library). The functions in this dll can be called from any programming language that supports looking up and calling of any symbol in a dll (such as ctypes in Python), or by linking to it, for languages like C and C++.
@@ -20,9 +20,7 @@ Note: The header and library files are built along with nvdaHelper. If you want 
 <li>nvdaControllerClient32.lib and nvdaControllerClient32.exp: The import and export libraries for nvdaControllerClient32.dll (used when linking with C/C++ code).</li>
 <li>nvdaControllerClient64.dll, nvdaControllerClient64.lib and nvdaControllerClient64.exp: same as above except for use in 64 bit applications.</li>
 <li>nvdaController.h: a C header file containing declarations for all the provided functions.</li>
-<li>example_python.py: an example Python program that uses the NVDA controller client API.</li>
-<li>fibonacci.py: a Python program that uses the NVDA controller client API to speak and send braille messages for Fibonacci numbers.</li>
-<li>example_c.c: The source code for an example C program that uses the NVDA controller client API.</li>
+<li>fibonacci.py: a Python program that uses the NVDA controller client API to speak and braille messages for Fibonacci numbers.</li>
 </ul>
 <h2>Available functions</h2>
 <p>
