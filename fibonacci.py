@@ -10,7 +10,7 @@ import ctypes
 Returns a list of numbers in the Fibonacci sequence starting at 0
 
 @param numFibNumbers: the number of numbers to return from the Fibonacci sequence
-@return: a list of numbers in the Fibonacci sequence starting at 0 and up until the number entered
+@return: a list of numbers, with the size set to the number entered by the user, in the Fibonacci sequence starting at 0
 """
 def fibonacci(numFibNumbers):
     fibNumbers = list()
