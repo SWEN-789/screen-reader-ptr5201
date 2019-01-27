@@ -1,3 +1,9 @@
+"""
+Author: Philip Rodriguez
+Date created: 01/24/2019
+Date last modified: 01/26/2019
+"""
+
 import ctypes
 
 """
