@@ -34,6 +34,12 @@ if res!=0:
     errorMessage=str(ctypes.WinError(res))
     ctypes.windll.user32.MessageBoxW(0,u"Error: %s"%errorMessage,u"Error communicating with NVDA",0)
 else:
+    # Needed for compatibility with Python 2 and Python 3 in getting user input
+    try:
+        input = raw_input
+    except NameError:
+        pass
+
     # Establish the boundaries of the input for the number of numbers to return from the Fibonacci sequence
     inputMustBeGreaterThan = 0
     inputMustBeLessThan = 25
@@ -45,9 +51,13 @@ else:
     clientLib.nvdaController_speakText(promptMessage)
     clientLib.nvdaController_brailleMessage(promptMessage)
     numFibNumbersToSpeak = input(promptMessage+": ")
+    try:
+        numFibNumbersToSpeak = int(numFibNumbersToSpeak)
+    except ValueError:
+        pass
 
     # If the input number is within the boundaries, then get the Fibonacci numbers
-    if numFibNumbersToSpeak > inputMustBeGreaterThan and numFibNumbersToSpeak < inputMustBeLessThan:
+    if type(numFibNumbersToSpeak) is int and numFibNumbersToSpeak > inputMustBeGreaterThan and numFibNumbersToSpeak < inputMustBeLessThan:
         fibNumbersList = fibonacci(numFibNumbersToSpeak)
         fibNumbersToSpeakString = u", ".join(str(fibNum) for fibNum in fibNumbersList)
         clientLib.nvdaController_speakText(fibNumbersToSpeakString)
